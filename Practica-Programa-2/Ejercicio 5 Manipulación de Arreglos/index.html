@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #studentList {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de Estudiantes</h1>
+    <div id="studentList"></div>
+    <h2 id="average"></h2>
+
+    <script>
+        // Crear el arreglo de objetos
+        const estudiantes = [
+            { nombre: "Juan", apellido: "Pérez", nota: 85 },
+            { nombre: "Ana", apellido: "Gómez", nota: 90 },
+            { nombre: "Luis", apellido: "Martínez", nota: 78 },
+            { nombre: "María", apellido: "Hernández", nota: 92 },
+            { nombre: "Carlos", apellido: "López", nota: 88 }
+        ];
+
+        // Variables para el total de notas y cantidad de estudiantes
+        let totalNotas = 0;
+
+        // Recorrer el arreglo e imprimir nombres y apellidos
+        estudiantes.forEach(estudiante => {
+            const div = document.createElement('div');
+            div.textContent = `${estudiante.nombre} ${estudiante.apellido}`;
+            document.getElementById('studentList').appendChild(div);
+            totalNotas += estudiante.nota; // Sumar la nota al total
+        });
+
+        // Calcular el promedio
+        const promedio = totalNotas / estudiantes.length;
+
+        // Mostrar el promedio
+        document.getElementById('average').textContent = `Promedio de notas: ${promedio.toFixed(2)}`;
+    </script>
+
+</body>
+</html>

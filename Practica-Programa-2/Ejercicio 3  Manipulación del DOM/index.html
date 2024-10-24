@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contenido del Párrafo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #miBoton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #miBoton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cambiar Contenido del Párrafo</h1>
+    <p id="miParrafo">Este es el contenido original del párrafo.</p>
+    <button id="miBoton" onclick="cambiarContenido()">Cambiar Contenido</button>
+
+    <script>
+        function cambiarContenido() {
+            document.getElementById("miParrafo").innerHTML = "El contenido del párrafo ha sido cambiado.";
+        }
+    </script>
+
+</body>
+</html>
